@@ -220,7 +220,7 @@ RegisterContext.prototype.onTransportClosed = function() {
   this.registered_before = this.registered;
 
   // Clear timeouts from custom contexts
-  const customContexts = Object.keys(this.customClientContexts);
+  const customContexts = Object.values(this.customClientContexts);
   customContexts.forEach(ctb => {
     if (ctb.registrationTimer !== null) {
       clearTimeout(ctb.registrationTimer);
